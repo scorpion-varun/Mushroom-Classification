@@ -1,0 +1,371 @@
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  
+    <title>Mushroom Classification</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+  
+    <!-- Favicons -->
+    <link style="position:relative" href="/static/assets/fav.png" rel="icon">
+
+  
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,600,600i,700,700i" rel="stylesheet">
+  
+    <!-- Vendor CSS Files -->
+    <link href="/static/assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="/static/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="/static/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="/static/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="/static/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  
+    <!-- Template Main CSS File -->
+    <link href="/static/assets/css/style.css" rel="stylesheet">
+  
+
+  </head>
+  
+  <body data-aos-easing="ease-in-out" data-aos-duration="1000" data-aos-delay="0">
+  
+    <!-- ======= Header ======= -->
+    <header id="header" class="fixed-top d-flex align-items-center">
+      <div class="container d-flex align-items-center justify-content-between">
+  
+        <div class="logo">
+          <h1 class="text-light"><a href="/"><span>Mushroom Classification</span></a></h1>
+        </div>
+  
+        <nav id="navbar" class="navbar">
+          <ul>
+            <li><a class="nav-link scrollto " href="/">Home</a></li>
+
+
+
+
+
+
+            <li><a class="getstarted scrollto" >C L A S S I F Y</a></li>
+          </ul>
+          <i class="bi mobile-nav-toggle bi-list"></i>
+        </nav><!-- .navbar -->
+  
+      </div>
+    </header><!-- End Header -->
+  
+    <main id="main">
+  
+      <!-- ======= Breadcrumbs Section ======= -->
+      <section class="breadcrumbs">
+        <div class="container">
+  
+          <div class="d-flex justify-content-between align-items-center">
+            <h2>CLASSIFY</h2>
+            
+          </div>
+  
+        </div>
+      </section><!-- End Breadcrumbs Section -->
+  
+      <section class="inner-page">
+        <div class="container">
+          <div>
+  
+         <form action="{% url 'result' %}" method="post">
+  
+             {% csrf_token %}
+
+              Cap Shape :
+              <label for="cap_shape"></label>
+              <select  name="cap_shape" id="cap_shape">
+                  <option value="b">Bell</option>
+                  <option value="c">Conical</option>
+                  <option value="x">Convex</option>
+                  <option value="f">Flat</option>
+                  <option value="k">Knobbed</option>
+                  <option value="s">Sunken</option>
+              </select><br> <br>
+
+
+              Cap Surface :
+              <label for="cap_surface"></label>
+              <select  name="cap_surface" id="cap_surface">
+                  <option value="f">Fibrous</option>
+                  <option value="g">Grooves</option>
+                  <option value="y">Scaly</option>
+                  <option value="s">Smooth</option>
+                </select><br> <br>
+
+                  Cap Color :
+                  <label for="cap_color"></label>
+                  <select  name="cap_color" id="cap_color">
+                      <option value="n">Brown</option>
+                      <option value="b">Buff</option>
+                      <option value="c">Cinnamon</option>
+                      <option value="g">Gray</option>
+                      <option value="r">Green</option>
+                      <option value="p">Pink</option>
+                      <option value="u">Purple</option>
+                      <option value="e">Red</option>
+                      <option value="w">White</option>
+                      <option value="y">Yellow</option>
+                     
+                    </select><br> <br>   
+                  
+                    Bruises :
+                  <label for="bruises"></label>
+                  <select  name="bruises" id="bruises">
+                      <option value="t">Bruises</option>
+                      <option value="f">No</option>
+                      
+                    </select><br> <br> 
+
+                    Odor :
+                  <label for="odor"></label>
+                  <select  name="odor" id="odor">
+                      <option value="a">Almond</option>
+                      <option value="l">Anise</option>
+                      <option value="c">Creosote</option>
+                      <option value="y">Fishy</option>
+                      <option value="f">Foul</option>
+                      <option value="m">Musty</option>
+                      <option value="n">None</option>
+                      <option value="p">Pungent</option>
+                      <option value="s">Spicy</option>
+                     
+                    </select><br> <br> 
+
+                    Gill Attachment :
+                  <label for="gill_attachment"></label>
+                  <select  name="gill_attachment" id="gill_attachment">
+                      <option value="a">Attached</option>
+                     
+                      <option value="f">Free</option>
+                      
+                     
+                    </select><br> <br> 
+
+                    Gill Spacing :
+                  <label for="gill_spacing"></label>
+                  <select  name="gill_spacing" id="gill_spacing">
+                      <option value="c">Close</option>
+                      <option value="w">Crowded</option>
+                      
+                     
+                    </select><br> <br> 
+
+                    Gill Size :
+                  <label for="gill_size"></label>
+                  <select  name="gill_size" id="gill_size">
+                      <option value="b">Broad</option>
+                      <option value="n">Narrow</option>
+                    </select><br> <br> 
+
+                    Gill Color :
+                  <label for="gill_color"></label>
+                  <select  name="gill_color" id="gill_color">
+                      <option value="k">Black</option>
+                      <option value="n">Brown</option>
+                      <option value="b">Buff</option>
+                      <option value="h">Chocolate</option>
+                      <option value="g">Gray</option>
+                      <option value="r">Green</option>
+                      <option value="o">Orange</option>
+                      <option value="p">Pink</option>
+                      <option value="u">Purple</option>
+                      <option value="e">Red</option>
+                      <option value="w">White</option>
+                      <option value="y">Yellow</option>
+                    </select><br> <br> 
+
+                    Stalk Shape :
+                  <label for="stalk_shape"></label>
+                  <select  name="stalk_shape" id="stalk_shape">
+                      <option value="e">Enlarging</option>
+                      <option value="t">Tapering</option>
+                    </select><br> <br> 
+
+                    Stalk Root :
+                  <label for="stalk_root"></label>
+                  <select  name="stalk_root" id="stalk_root">
+                      <option value="b">Bulbous</option>
+                      <option value="c">Club</option>
+                     
+                      <option value="e">equal</option>
+                      
+                      <option value="r">Rooted</option>
+                      <option value="z">Missing</option>
+                    </select><br> <br> 
+
+                    Stalk Surface Above Ring :
+                  <label for="stalk_surface_above_ring"></label>
+                  <select  name="stalk_surface_above_ring" id="stalk_surface_above_ring">
+                    <option value="f">Fibrous</option>
+                    <option value="y">Scaly</option>
+                    <option value="k">Silky</option>
+                    <option value="s">Smooth</option>
+                     
+                    </select><br> <br> 
+
+                    Stalk Surface Below Ring :
+                  <label for="stalk_surface_below_ring"></label>
+                  <select  name="stalk_surface_below_ring" id="stalk_surface_below_ring">
+                      <option value="f">Fibrous</option>
+                      <option value="y">Scaly</option>
+                      <option value="k">Silky</option>
+                      <option value="s">Smooth</option>
+                    </select><br> <br> 
+
+                    Stalk Color Above Ring :
+                  <label for="stalk_color_above_ring"></label>
+                  <select  name="stalk_color_above_ring" id="stalk_color_above_ring">
+                      <option value="n">Brown</option>
+                      <option value="b">Buff</option>
+                      <option value="c">Cinnamon</option>
+                      <option value="g">Gray</option>
+                      <option value="o">Orange</option>
+                      <option value="p">Pink</option>
+                     <option value="e">Red</option>
+                      <option value="w">White</option>
+                      <option value="y">Yellow</option>
+                     
+                    </select><br> <br> 
+
+                    Stalk Color Below Ring :
+                  <label for="stalk_color_below_ring"></label>
+                  <select  name="stalk_color_below_ring" id="stalk_color_below_ring">
+                      <option value="n">Brown</option>
+                      <option value="b">Buff</option>
+                      <option value="c">Cinnamon</option>
+                      <option value="g">Gray</option>
+                      <option value="o">Orange</option>
+                      <option value="p">Pink</option>
+                     
+                      <option value="e">Red</option>
+                      <option value="w">White</option>
+                      <option value="y">Yellow</option>
+                    
+                    </select><br> <br> 
+
+                    Veil Type :
+                  <label for="veil_type"></label>
+                  <select  name="veil_type" id="veil_type">
+                      <option value="p">Partial</option>
+                      
+                     
+                    </select><br> <br> 
+
+                    Veil Color :
+                  <label for="veil_color"></label>
+                  <select  name="veil_color" id="veil_color">
+                      <option value="n">Brown</option>
+                      <option value="o">Orange</option>
+                      <option value="w">White</option>
+                      <option value="y">Yellow</option>
+                    </select><br> <br> 
+
+                    Ring Number :
+                  <label for="ring_number"></label>
+                  <select  name="ring_number" id="ring_number">
+                      <option value="n">None</option>
+                      <option value="o">One</option>
+                      <option value="t">Two</option>
+                    </select><br> <br> 
+
+                    Ring Type :
+                  <label for="ring_type"></label>
+                  <select  name="ring_type" id="ring_type">
+                      
+                      <option value="e">Evanescent</option>
+                      <option value="f">Flaring</option>
+                      <option value="l">Large</option>
+                      <option value="n">None</option>
+                      <option value="p">Pendant</option>
+                      
+                    </select><br> <br> 
+
+                    Spore Print Color   :
+                  <label for="spore_print_color"></label>
+                  <select  name="spore_print_color" id="spore_print_color">
+                      <option value="k">Black</option>
+                      <option value="n">Brown</option>
+                      <option value="b">Buff</option>
+                      <option value="h">Chocolate</option>
+                      <option value="r">Green</option>
+                      <option value="o">Orange</option>
+                      <option value="u">Purple</option>
+                      <option value="w">White</option>
+                      <option value="y">Yellow</option>
+                    </select><br> <br> 
+
+                    Population :
+                  <label for="population"></label>
+                  <select  name="population" id="population">
+
+                      <option value="a">Abundant</option>
+                      <option value="c">Clustered</option>
+                      <option value="n">Numerous</option>
+                      <option value="s">Scattered</option>
+                      <option value="v">Several</option>
+                      <option value="y">Solitary</option>
+                      
+                    </select><br> <br> 
+
+                    Habitat :
+                  <label for="habitat"></label>
+                  <select  name="habitat" id="habitat">
+
+                      <option value="g">Grasses</option>
+                      <option value="l">Leaves</option>
+                      <option value="m">Meadows</option>
+                      <option value="p">Paths</option>
+                      <option value="u">Urban</option>
+                      <option value="w">Waste</option>
+                      <option value="d">Woods</option>
+                      
+                    </select><br> <br> 
+              
+            
+  
+  
+         <input type="submit" value="CLASSIFY" ><br> <br>
+         </form>
+  
+  
+     </div>
+  
+        </div>
+      </section>
+  
+    </main><!-- End #main -->
+  
+    <!-- ======= Footer ======= -->
+    <footer id="footer">
+  
+      
+  
+      
+  
+      <div class="container py-4">
+        <div class="copyright">
+          © Copyright <strong></strong>. All Rights Reserved
+        </div>
+        
+      </div>
+    </footer><!-- End Footer -->
+
+    <!-- Vendor JS Files -->
+    <script src="/static/assets/vendor/aos/aos.js"></script>
+    <script src="/static/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/static/assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="/static/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="/static/assets/vendor/php-email-form/validate.js"></script>
+    <script src="/static/assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="/static/assets/js/main.js"></script>
+  
+  
+  
+  </body></html>
